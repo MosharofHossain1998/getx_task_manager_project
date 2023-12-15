@@ -20,9 +20,10 @@ class CompleteTaskController extends GetxController{
 
     final NetworkResponse response = await NetworkCaller().getRequest(Urls.getCompletedTaskList);
     _getCompletedTaskInProgress = false;
+    print(response);
     update();
     if(response.isSuccess){
-      var _taskListModel = TaskListModel.fromJson(response.jsonResponse);
+      _taskListModel = TaskListModel.fromJson(response.jsonResponse);
       return true;
     }
     return false;

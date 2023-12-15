@@ -20,6 +20,7 @@ class _CompletedTasksScreenState extends State<CompletedTasksScreen> {
 
   Future<void> getCompletedTaskList() async {
     final response = await completeTaskController.getCompletedTaskList();
+    print(response);
     if (!response) {
       Get.offAll(const LoginScreen());
     }
@@ -53,8 +54,7 @@ class _CompletedTasksScreenState extends State<CompletedTasksScreen> {
                     onRefresh: getCompletedTaskList,
                     child: ListView.builder(
                         itemCount: completeTaskController
-                                .taskModelList.taskList?.length ??
-                            0,
+                                .taskModelList.taskList?.length ?? 0,
                         itemBuilder: (context, index) {
                           return TaskItemCard(
                             task: completeTaskController

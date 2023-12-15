@@ -34,7 +34,7 @@ class _MainButtomNavScreenState extends State<MainButtomNavScreen> {
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: mainBottomNavController.currentSelectedScreen,
             onTap: (index){
-              mainBottomNavController.currentSelectedScreen = index;
+              mainBottomNavController.changeScreen(index);
             },
             selectedItemColor: Colors.green,
             unselectedItemColor: Colors.blue,
